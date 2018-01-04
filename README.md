@@ -20,3 +20,16 @@ To run:
 
 spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.11:2.2.0 kafka-in-out-example.py <server:port> <topic1> <topic2> <checkpoints_dir>  
 
+*kafka-to-file.py* - this script reads Kafka <topic> json structured stream from specified broker(s) and writes predefined columns and rows to specified <data_dir> 
+
+To run:
+
+spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.11:2.2.0 kafka-to-file.py <server:port> <topic> <data_dir> <checkpoints_dir>  
+
+*files-to-cassandra-example.py* - this script reads specified <data_dir> and writes the content to specified Cassandra 
+<keyspace> <table>
+
+To run:
+
+spark-submit --packages  com.datastax.spark:spark-cassandra-connector_2.11:2.0.6 files-to-cassandra-example.py <keyspace> <table> <data_dir> [<header>]
+
